@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { usePosts } from '../hooks/usePosts';
+import { usePopularPosts } from '../hooks/usePopularPosts';
 
 export const postsContext = React.createContext({});
 
 export const PostsContextProvider = ({ children }) => {
-  const [posts, bestPosts] = usePosts();
+  const [popularPosts] = usePopularPosts();
+  console.log('popularPosts from postContext: ', popularPosts);
 
   return (
-    <postsContext.Provider value={{ posts, bestPosts }}>
+    <postsContext.Provider value={{ popularPosts }}>
       {children}
     </postsContext.Provider>
   );

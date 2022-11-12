@@ -6,18 +6,14 @@ import Rating from './Rating';
 import PublicationDate from './PublicationDate';
 import DelButton from './DelButton';
 
-export const Post = ({ postData }) => {
-  const { thumbnail, title, author, ups, date } = postData;
-
-  return (
-    <li className={style.post}>
-      <Photo src={thumbnail} alt={title}/>
-      <ContentPost title={title} author={author}/>
-      <Rating rating={ups} />
-      <PublicationDate date={date}/>
-      <DelButton />
-    </li>
-  );
+export const Post = (postData) => {
+  <li className={style.post}>
+    <Photo src={postData.thumbnail} alt={postData.title}/>
+    <ContentPost title={postData.title} author={postData.author}/>
+    <Rating rating={postData.ups} />
+    <PublicationDate date={postData.created}/>
+    <DelButton />
+  </li>;
 };
 
 Post.propTypes = {

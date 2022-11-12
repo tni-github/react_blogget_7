@@ -48,7 +48,8 @@ export const Tabs = () => {
       {isDropdown && (
         <Text As='div' className={style.wrapperBtn}>
           <button className={style.btn}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
             {menuChecked ? menuChecked : 'Меню'}
             <ArrowIcon width={15} height={15}/>
           </button>
