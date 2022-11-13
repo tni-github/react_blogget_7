@@ -20,9 +20,8 @@ export const usePopularPosts = () => {
       return response.json();
     })
       .then(({ data }) => {
-        // console.log('data', { data });
-        setPopularPosts(data.children.map((post) => popularPosts.push(post)));
-        console.log('popularPosts vnutri fetch', popularPosts);
+        setPopularPosts(data.children.map((post) =>
+          popularPosts.concat(post.data)));
       })
       .catch((err) => {
         console.error(err);
@@ -31,7 +30,6 @@ export const usePopularPosts = () => {
       });
   }, [token]);
 
-  console.log('popularPosts перед return', popularPosts);
   return [popularPosts];
 };
 

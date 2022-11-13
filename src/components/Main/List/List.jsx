@@ -5,8 +5,6 @@ import Post from './Post';
 
 export const List = () => {
   const { popularPosts } = useContext(postsContext);
-  console.log('popularPosts from List: ', popularPosts);
-
   // const postsData = [
   //   {
   //     thumbnail: '',
@@ -44,8 +42,8 @@ export const List = () => {
 
   return (
     <ul className={style.list}>
-      {popularPosts.map((postData, index) => (
-        <Post key={index} postdata={postData}/>
+      {popularPosts.map((postData) => (
+        <Post key={postData[0].id} postData={postData[0]} />
       ))}
     </ul>
   );

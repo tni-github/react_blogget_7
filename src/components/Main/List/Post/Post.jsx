@@ -8,10 +8,11 @@ import DelButton from './DelButton';
 
 export const Post = (postData) => {
   <li className={style.post}>
-    <Photo src={postData.thumbnail} alt={postData.title}/>
-    <ContentPost title={postData.title} author={postData.author}/>
-    <Rating rating={postData.ups} />
-    <PublicationDate date={postData.created}/>
+    <Photo src={postData.postData.thumbnail} alt={postData.postData.title}/>
+    <ContentPost title={postData.postData.title}
+      author={postData.postData.author}/>
+    <Rating rating={postData.postData.ups} />
+    <PublicationDate date={postData.postData.created}/>
     <DelButton />
   </li>;
 };

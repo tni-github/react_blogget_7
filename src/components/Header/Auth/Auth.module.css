@@ -58,14 +58,6 @@
     outline-color: var(--orange);
 }
 
-.span {
-    display: block;
-    position: absolute;
-    bottom: 3px;
-    font-size: 0.8vw;
-    left: 10%;
-}
-
 .svg {
     width: 100%;
     height: 100%;
@@ -82,10 +74,6 @@
     .logout {
         width: 45px;
         font-size: 12px;
-        left: 20%;
-    }
-
-    .span {
         left: 20%;
     }
 }

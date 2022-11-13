@@ -32,8 +32,6 @@ export const Auth = () => {
             title={auth.name}
             alt={`Аватар пользователя ${auth.name}`}
           />
-          {/* <Text className={style.span}
-            color={'grey33'} center={'center'}>{auth.name}</Text> */}
         </button>
         {isActiveLogout ?
           <button
