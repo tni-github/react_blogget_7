@@ -1,22 +1,27 @@
 import style from './Post.module.css';
-import PropTypes from 'prop-types';
 import Photo from './Photo';
 import ContentPost from './ContentPost';
 import Rating from './Rating';
 import PublicationDate from './PublicationDate';
 import DelButton from './DelButton';
+import { postsContext } from '../../../../context/postsContext';
+import { useContext } from 'react';
 
-export const Post = (postData) => {
-  <li className={style.post}>
-    <Photo src={postData.postData.thumbnail} alt={postData.postData.title}/>
-    <ContentPost title={postData.postData.title}
-      author={postData.postData.author}/>
-    <Rating rating={postData.postData.ups} />
-    <PublicationDate date={postData.postData.created}/>
-    <DelButton />
-  </li>;
+export const Post = () => {
+  const { popularPosts } = useContext(postsContext);
+  console.log('popularPosts from POST: ', popularPosts);
+
+  return (
+    popularPosts.map((postData) => (
+      <li key={postData.data.id} className={style.post}>
+        <Photo src={postData.data.thumbnail} alt={postData.data.title}/>
+        <ContentPost title={postData.data.title}
+          author={postData.data.author}/>
+        <Rating rating={postData.data.ups} />
+        <PublicationDate date={postData.data.created}/>
+        <DelButton />
+      </li>
+    ))
+  );
 };
 
-Post.propTypes = {
-  postData: PropTypes.object,
-};

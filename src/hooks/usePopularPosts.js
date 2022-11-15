@@ -20,8 +20,7 @@ export const usePopularPosts = () => {
       return response.json();
     })
       .then(({ data }) => {
-        setPopularPosts(data.children.map((post) =>
-          popularPosts.concat(post.data)));
+        setPopularPosts(data.children);
       })
       .catch((err) => {
         console.error(err);
@@ -30,6 +29,7 @@ export const usePopularPosts = () => {
       });
   }, [token]);
 
+  console.log('popularPosts (get in then): ', popularPosts);
   return [popularPosts];
 };
 

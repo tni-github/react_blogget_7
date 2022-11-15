@@ -34,7 +34,7 @@
 
 @media (min-width: 580px) {
     .linkPost {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .linkPost:hover {
@@ -58,6 +58,7 @@
 
 @media (min-width: 768px) {
     .linkPost {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 1.5;
     }
 }
