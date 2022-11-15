@@ -29,7 +29,6 @@ export const usePopularPosts = () => {
       });
   }, [token]);
 
-  console.log('popularPosts (get in then): ', popularPosts);
   return [popularPosts];
 };
 

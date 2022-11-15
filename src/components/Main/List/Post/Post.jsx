@@ -9,7 +9,6 @@ import { useContext } from 'react';
 
 export const Post = () => {
   const { popularPosts } = useContext(postsContext);
-  console.log('popularPosts from POST: ', popularPosts);
 
   return (
     popularPosts.map((postData) => (
