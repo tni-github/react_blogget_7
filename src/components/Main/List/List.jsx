@@ -43,7 +43,7 @@ export const List = () => {
   return (
     <ul className={style.list}>
       {popularPosts.map((postData) => (
-        <Post key={postData.data.id} />
+        <Post key={postData.data.id} dataPost={postData.data} />
       ))}
     </ul>
   );
